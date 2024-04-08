@@ -1,0 +1,28 @@
+from neon.smart_contract import SmartContract 
+
+class CopyrightContract(SmartContract):
+
+    def __init__(self):
+        super().__init__()
+
+        self.authors = {}
+        self.licenses = {}
+        self.transfers = {}
+
+    def register_author(self, author, address):
+        self.authors[author] = address
+
+    def get_author(self, author):
+        return self.authors[author]
+
+    def register_license(self, license, terms):
+        self.licenses[license] = terms
+
+    def get_license(self, license):
+        return self.licenses[license]
+
+    def register_transfer(self, author, recipient, token_id):
+        self.transfers[(author, token_id)] = recipient
+
+    def get_transfer(self, author, token_id):
+        return self.transfers[(author, token_id)

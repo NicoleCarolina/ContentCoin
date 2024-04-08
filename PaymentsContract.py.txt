@@ -1,0 +1,15 @@
+from neon.smart_contract import SmartContract
+from neon.token import Token
+
+class PaymentsContract(SmartContract):
+
+    def __init__(self):
+        super().__init__()
+
+        self.payments = {}
+
+    def pay_royalties(self, author, token_id, amount):
+        self.payments[(author, token_id)] = amount
+
+    def get_royalties(self, author, token_id):
+        return self.payments[(author, token_id)]

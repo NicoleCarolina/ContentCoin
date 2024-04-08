@@ -1,0 +1,29 @@
+from neon.web import App
+
+app = App()
+
+@app.route("/")
+def index():
+    return "<h1>Plataforma de tokenización de copywriting</h1>"
+
+@app.route("/publish")
+def publish():
+    # Código para publicar contenido
+    # Interfaz para ingresar título, descripción, contenido, licencia, precio
+
+@app.route("/evaluate")
+def evaluate():
+    # Código para evaluar contenido
+    # Mostrar contenido y permitir que los usuarios voten y comenten
+
+@app.route("/buy")
+def buy():
+    # Código para comprar tokens de contenido
+    # Mostrar los tokens disponibles para la compra y permitir la compra usando Phantom Wallet
+
+@app.route("/profile")
+def profile():
+    # Mostrar información del autor y sus tokens publicados
+    # Permitir al autor ver sus ingresos por regalías
+
+app.run()

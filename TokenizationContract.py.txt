@@ -1,0 +1,16 @@
+from neon.smart_contract import SmartContract
+from neon.token import Token
+
+class TokenizationContract(SmartContract):
+
+    def __init__(self):
+        super().__init__()
+
+        self.tokens = {}
+
+    def create_token(self, author, content, license, name, symbol, supply):
+        token = Token(author, content, license, name, symbol, supply)
+        self.tokens[token.id] = token
+
+    def get_token(self, token_id):
+        return self.tokens[token_id]
